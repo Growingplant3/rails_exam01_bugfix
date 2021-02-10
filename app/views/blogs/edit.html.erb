@@ -1,6 +1,8 @@
 <h1>Editing Blog</h1>
 
-<% render 'form', blog: @blog %>
+# エラーの原因: エラーではないが、フォームが出力されていない。
+# 修正の意図: 呼び出しの際には、"<%"ではなく"<%="での記述が必要。
+<%= render 'form', blog: @blog %>
 
 <%= link_to 'Show', @blog %> |
 <%= link_to 'Back', blogs_path %>
