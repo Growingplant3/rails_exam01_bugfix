@@ -12,7 +12,8 @@
 
 <% unless @blog.comments.count.zero? %>
   <hr>
-
+  # エラーの原因: String can't be coerced into Integerのエラー。数字と文字は足せない。
+  # 修正の意図: 文字と文字の合成のコードへ変更。
   <p>
     <strong>Comment:</strong>
     <%= @blog.comments.count.to_i + "comments" %>
