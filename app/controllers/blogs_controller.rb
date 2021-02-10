@@ -41,7 +41,9 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  # エラーの原因: バリデーションのエラー。paramsで受け取る値を許可していなかったため、contentカラムに保存できない状態。
+  # 修正の意図: permitメソッドの引数に追記する。
   def blog_params
-    params.require(:blog).permit(:title)
+    params.require(:blog).permit(:title, :content)
   end
 end
